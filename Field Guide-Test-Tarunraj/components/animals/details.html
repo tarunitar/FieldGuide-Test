@@ -5,10 +5,19 @@
             <span data-bind="text: currentItem.Name" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: center; display: block; margin-left: 70px; margin-right: 70px;"></span>
         </div>
     </header>
-
+	<head>
+        <style>
+        	span.normal {font-size:150%}
+        </style>
+    </head>
     <h3 data-bind="text: currentItem.Scientific_Name"></h3>
-    <p data-bind="text: currentItem.Notes"></p>
+   	<p><b>Average Height: </b> <span data-bind="text: currentItem.Ave_Height"></span>m</p>
+	<p><b>Average Weight: </b> <span data-bind="text: currentItem.Ave_Weight"></span>kg</p>
     <img data-bind="attr: { src: currentItem.PicUrl }" width="100%" height="auto">
-    <!-- START_CUSTOM_CODE_animalsModel -->
-    <!-- END_CUSTOM_CODE_animalsModel -->
+    <p style="color:red"><b>WARNING: </b><span data-bind="text: currentItem.Warnings" class="normal"></span></p>
+	<p><b>Behavior:</b> <span data-bind="text: currentItem.Behavior"></span></p>
+    <p><b>Predators:</b> <span data-bind="text: currentItem.Predators"></span></p>
+    <p><b>Lifespan:</b> <span data-bind="text: currentItem.Lifespan"></span></p>
+    <p><b>Diet:</b> <span data-bind="text: currentItem.Diet"></span></p>
+    <p><b>Notes:</b> <span data-bind="text: currentItem.Notes"></span></p>
 </div>
