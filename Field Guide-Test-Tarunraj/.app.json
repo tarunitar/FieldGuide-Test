@@ -1,15 +1,54 @@
 {
   "type": "kendo-ui-mobile",
-  "isNew": true,
+  "views": [
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "homeView",
+      "components": [],
+      "title": "Home View",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "animals",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:list",
+          "name": "animalsModel",
+          "dataProvider": "defaultProvider",
+          "collection": "Animal",
+          "imageField": "Pic",
+          "headerField": "Name",
+          "subHeaderField": "Scientific_Name",
+          "masterDetails": true,
+          "detailHeaderField": "Name",
+          "detailSubHeaderField": "Scientific_Name",
+          "detailDescriptionField": "Notes",
+          "detailImageField": "Pic",
+          "pullToRefresh": false,
+          "endlessScroll": false
+        }
+      ],
+      "title": "Animals",
+      "addToNavigation": true,
+      "icon": "bookmarks"
+    }
+  ],
   "dataProviders": [
     {
-      "type": "dataProvider",
-      "title": "DefaultProvider",
+      "type": "kendo-ui-mobile:dataProvider",
       "name": "defaultProvider",
+      "everliveUrl": "//platform.telerik.com/bs-api/v1/",
+      "title": "DefaultProvider",
       "source": "everlive",
-      "offlineStorage": true,
       "everliveKey": "0FTiNy5k9nnUn2tX",
-      "everliveUrl": ""
+      "offlineStorage": true
     }
-  ]
+  ],
+  "name": "kendoUiMobileApp",
+  "navigation": "tabstrip",
+  "view": "homeView",
+  "transition": "slide",
+  "skin": "flat"
 }

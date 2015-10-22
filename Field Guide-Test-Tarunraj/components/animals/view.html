@@ -1,0 +1,15 @@
+<div data-role="view" data-title="Animals" data-layout="main" data-model="app.animals" data-show="app.animals.onShow" data-after-show="app.animals.afterShow">
+    <!-- START_CUSTOM_CODE_animals -->
+    <!-- END_CUSTOM_CODE_animals -->
+    <ul data-role="listview" data-style="inset" data-template="animalsModelTemplate" data-bind="{ source: animalsModel.dataSource, events: {click: animalsModel.itemClick}}" data-pull-to-refresh="false" data-endless-scroll="false">
+    </ul>
+    <!-- START_CUSTOM_CODE_animalsModel -->
+    <!-- END_CUSTOM_CODE_animalsModel -->
+    <script type="text/x-kendo-template" id="animalsModelTemplate">
+        <div class="image-with-text">
+            <img src="#: data['PicUrl'] #" width="30%" height="30%">
+            <h3>#: data['Name'] #</h3>
+            <p>#: data['Scientific_Name'] #</p>
+        </div>
+    </script>
+</div>
